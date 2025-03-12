@@ -1,10 +1,11 @@
 label w0_d2_StatueDB:
-    $ c_rep = reputation(c_rep, -2)
-    $ p_rep = reputation(p_rep, -2)
-    $ js_rep = reputation(js_rep, -2)
+    $ c_rep = reputation(c_rep, -affection_change)
+    $ p_rep = reputation(p_rep, -affection_change)
+    $ js_rep = reputation(js_rep, -affection_change)
     show python pocket
     show cpp
     show js
+
     mc "{i}Distracted{/i} \"Wait, guys. Look at that girl over there.\""
     mc "\"She is actually so hot, should I go talk to her?\""
 
@@ -44,9 +45,9 @@ label w0_d2_StatueDBContinue:
             mc "\"Well I am not going to sit here and say that you guys aren’t cute...\""
         
         "Deny that they're cute":
-            $ c_rep = reputation(c_rep, -2)
-            $ p_rep = reputation(p_rep, -2)
-            $ js_rep = reputation(js_rep, -2)
+            $ c_rep = reputation(c_rep, -affection_change)
+            $ p_rep = reputation(p_rep, -affection_change)
+            $ js_rep = reputation(js_rep, -affection_change)
             
             mc "\"No way! I don’t think that! That’s crazy! I mean-\""
             mc "\"This feels like a trap!\""

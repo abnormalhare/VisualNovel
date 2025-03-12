@@ -32,6 +32,9 @@ define bsl = Character("Breakout Session Leader", color="5c5f5d", image="bsl")
 
 ## OLD CHARACTER IMAGE CODE ##
 
+#Affection change
+define affection_change = 2
+
 #Rust
 image rust_normal = "Rust/Rust_Base_1.png"
 image rust_talk = "Rust/Rust_Base_2.png"

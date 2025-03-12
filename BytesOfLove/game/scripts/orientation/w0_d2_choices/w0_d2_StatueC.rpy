@@ -1,7 +1,7 @@
 label w0_d2_StatueC:
-    $ c_rep = reputation(c_rep, 2)
-    $ p_rep = reputation(p_rep, -2)
-    $ js_rep = reputation(js_rep, -2)
+    $ c_rep = reputation(c_rep, affection_change)
+    $ p_rep = reputation(p_rep, -affection_change)
+    $ js_rep = reputation(js_rep, -affection_change)
     show python angry
     show cpp
     show js
@@ -25,7 +25,7 @@ label w0_d2_StatueC:
         c talk "\"Hm, so you don’t think I’m cute?\""
 
         "Admit C++ is cute":
-            $ c_rep = reputation(c_rep, 2)
+            $ c_rep = reputation(c_rep, affection_change)
             show cpp
             
             mc "{i}Flustered{/i}"
@@ -50,7 +50,7 @@ label w0_d2_StatueC:
             c @ angry talk "\"[mc], be quiet. This isn’t even about you!\""
 
         "Call out C++":
-            $ c_rep = reputation(c_rep, -2)
+            $ c_rep = reputation(c_rep, -affection_change)
             show cpp
 
             mc "\"Don’t go fishing for a compliment just because I agreed with you...\""
