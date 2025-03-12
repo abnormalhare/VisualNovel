@@ -249,17 +249,17 @@ label w0_d2:
             jump w0_d2_StatueDB
 
 label w0_d2_AfterStatue:
-    show bsl_talk with dissolve
-    bsl "\"Now we will be taking a break for lunch.\""
+    show bsl with dissolve
+    bsl @ talk "\"Now we will be taking a break for lunch.\""
 
     #change scene to cafeteria
     scene dining_hall with longer_fade 
 
-    show bsl_talk with dissolve
-    bsl "\"The different food stations are located around the room.\""
+    show bsl with dissolve
+    bsl talk "\"The different food stations are located around the room.\""
     bsl "\"We will be meeting back in Room 283 in one hour.\""
     bsl "\"Feel free to sit wherever you want.\""
-    hide bsl_talk with dissolve
+    hide bsl with dissolve
     mc "\"Oh jeez, I was going to the bathroom and now everyone is already sitting with each other.\""
     mc "\"Where are the girls I was talking to earlier?\""
     mc "\"I hope I didn’t hurt anyone’s feelings.\""
