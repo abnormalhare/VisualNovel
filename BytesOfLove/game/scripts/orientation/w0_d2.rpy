@@ -29,50 +29,42 @@ label w0_d2:
     "{i}You burst through the doors into an nearly empty auditorium, looking around frantically in search of someone.{/i}" 
     mc "Oh look there’s somebody."
     mc "She looks old, I wonder if she is a professor..."
-    show java_normal at right with dissolve 
+    show java at right with dissolve 
     mc "\"Excuse me ma’am, I’m so sorry that I’m late.\""
     mc "\"I don’t know where to go or what to do.\""
     mc "\"My car wouldn't start and I had a family emergency, and I got lost, and...\""
-    hide java_normal
-    show java_happy at right
-    u "\"Hey, it’s okay. It’s just orientation, calm down.\"" 
-    hide java_happy
-    show java_normal at right
+
+    j @ happy "\"Hey, it’s okay. It’s just orientation, calm down.\"" 
+
     mc "{i}Panicked{/i} \"Yeah, but it’s my first day and I feel like I am already messing everything up.\""
-    hide java_normal
-    show java_happy at right
-    u "\"Oh sweetie, don’t worry about it.\""
-    u "\"Every journey has its own pace; being late doesn’t mean you won’t reach your destination.\""
+
+    j @ happy "\"Oh sweetie, don’t worry about it.\""
+    j @ happy "\"Every journey has its own pace; being late doesn’t mean you won’t reach your destination.\""
     
-    hide java_happy
-    show java_normal at right
     mc "{i}Stunned{/i} \"Huh, I guess you’re right.\""
     mc "\"Well, what did I miss?\""
-    hide java_normal
-    show java_happy at right
-    u "\"First, the dean came in and introduced himself to the students.\""
-    u "\"He said that everyone here was admitted because they are hard working, responsible, smart...\""
-    u "\"...and punctual.\""
-    hide java_happy
-    show java_normal at right
+
+    j happy "\"First, the dean came in and introduced himself to the students.\""
+    j "\"He said that everyone here was admitted because they are hard working, responsible, smart...\""
+    j "\"...and punctual.\""
+
+    show java
     mc "\"Oh. Well that's just great.\""
-    hide java_normal
-    show java_happy at right
-    u "\"And then he dismissed them all to breakout rooms where their orientation groups met.\""
-    u "\"You can check the list outside of the auditorium to see what room you’ll be in.\""
-    hide java_happy
-    show java_normal at right
+    
+    j @ happy "\"And then he dismissed them all to breakout rooms where their orientation groups met.\""
+    j @ happy "\"You can check the list outside of the auditorium to see what room you’ll be in.\""
+
     mc "\"Well how will I know where my room is? I don’t know anything about this school!\""
-    hide java_normal
-    show java_happy at right
-    u "\"I’m not sure, but you seem smart. I bet you’ll figure it out.\""
-    u "\"Anyway, I have to go.\""
-    u "\"It was nice to meet you.\""
-    hide java_happy
-    show java_normal at right
-    u "{i}Winks{/i}"
+
+    j happy "\"I’m not sure, but you seem smart. I bet you’ll figure it out.\""
+    j "\"Anyway, I have to go.\""
+    j "\"It was nice to meet you.\""
+    
+    show java
+    j "{i}Winks{/i}"
     "{i}She turns around and leaves{/i}"
-    hide java_normal with fade
+    hide java with fade
+
     mc "{i}You shout, still flustered.{/i} \"Thank you!!\""
     mc "\"Man, I hope all of my professors are as nice as her!\""
     mc "\"So, where am I supposed to go...\""
@@ -88,49 +80,36 @@ label w0_d2:
     "{i}You sit down at a table with 3 girls{/i}"
     mc "\"Sorry I’m late, I got lost on the wa-\""
     
-    show cpp_normal with easeinright #moves cpp in from the right to the middle 
+    show cpp with easeinright #moves cpp in from the right to the middle 
+    c @ talk "\"Shut up, did it ever occur to you that maybe everyone is quiet for a reason?\""
 
-    hide cpp_normal
-    show cpp_talk
-    c "\"Shut up, did it ever occur to you that maybe everyone is quiet for a reason?\""
-
-    hide cpp_talk
-    show cpp_normal
     "{i}You obediently sit down, flustered{/i}"
 
-    hide cpp_normal
-    show bsl_talk
+    hide cpp
+    show bsl talk
     bsl "\"Alright, it looks like everyone is here.\""
     bsl "\"Go ahead and take some time to introduce yourself to those around you.\""
-
-    hide bsl_talk
-    show python_normal with dissolve
-    hide python_normal
-    show python_happy
-
-    p "\"Hi guys!\""
-    $ p = Character("Python", color="#7DC23B")
+    hide bsl
+    
+    show python with dissolve
+    p happy "\"Hi guys!\""
+    $ p = Character("Python", color="#7DC23B", image="python")
     p "\"My name is Python, I just moved here from Logicburg.\""
     p "\"I’m a computer science major, but I don’t really have any experience…\""
     p "\"I also really like playing tennis and reading books.\""
 
-    hide python_happy
-    show js_normal with dissolve
-    hide js_normal
-    show js_talk
-    js "\"Oh my gosh, that is so cool, Python!\""
-    $ js = Character("JavaScript", color="#FFD700")
+    hide python
+    show js with dissolve
+    js talk "\"Oh my gosh, that is so cool, Python!\""
+    $ js = Character("JavaScript", color="#FFD700", image="js")
     js "\"I played varsity tennis in high school! My name's JavaScript. \""
-    hide js_talk
-    show js_smirk
-    js "\"And I’m also a computer science major, that’s so cool. Slay!\""
+    js smirk "\"And I’m also a computer science major, that’s so cool. Slay!\""
     js "\"I probably want to focus on web development, but I don’t have much knowledge either...\""
+    hide js
 
-    hide js_smirk
-    show cpp_talk with dissolve
-
-    $ c = Character("C++", color="#00599C")
-    c "\"Well I do have a lot of experience, my name is C++.\""
+    show cpp with dissolve
+    $ c = Character("C++", color="#00599C", image="cpp")
+    c talk "\"Well I do have a lot of experience, my name is C++.\""
     c "\"I’m a computer science major with a focus in game development.\""
     c "\"I did a lot of coding in high school so I’m probably a lot better than you guys.\""
     c "\"What about you?\""
@@ -140,15 +119,13 @@ label w0_d2:
         c "\"Why were you so late?\"" 
 
         "Tell the truth":
-            hide cpp_talk
-            show cpp_normal
+            show cpp
             mc "\"I was up really late last night and my phone died before I fell asleep, so I missed my alarm.\""
             mc "\"Then this morning, I got lost on the way here and struggled to find the room.\""
             mc "\"It was a mess.\""
 
         "Make up excuse(s)":
-            hide cpp_talk
-            show cpp_normal
+            show cpp
             $ p_rep = reputation(r_rep, -1)
             $ js_rep = reputation(r_rep, -1)
             $ c_rep = reputation(r_rep, -1)
@@ -164,48 +141,29 @@ label w0_d2:
     mc "\"I’m also a computer science major, and I’m really excited to get my college experience started.\""
     mc "\"Why do you guys want to do computer science?\""
     
-    hide cpp_normal
-    show cpp_talk
+    c @ talk "\"My mom is a software developer for iClicker and my dad is a software engineer for MentiMeter, so you could say it’s in my blood.\""
+    c @ talk "\"I have been coding for as long as I can remember.\""
 
-    c "\"My mom is a software developer for iClicker and my dad is a software engineer for MentiMeter, so you could say it’s in my blood.\""
-    c "\"I have been coding for as long as I can remember.\""
-
-    hide cpp_talk
-    show cpp_normal
-    show js_talk at left with easeinleft
+    show js talk at left with easeinleft
     js "\"Well aren’t you lucky.\""
     js "\"My mom is the worst person in the world, she is such a helicopter mom.\""
     js "\"She like, literally, never leaves me alone.\""
     js "\"Even though I’m in college, she still won’t butt out of my life.\""
     js "\"She even wanted to come here with me...\""
-    hide js_talk
-    show js_normal at left
+    show js
 
-    show python_pocket at right with easeinright
-    hide python_pocket
-    show python_pocket_happy at right
-    p "\"I mean at least you moved far away from home, right?\""
-    hide python_pocket_happy
-    show python_pocket at right
+    show python pocket at right with easeinright
+    p pocket @ pocket happy "\"I mean at least you moved far away from home, right?\""
 
-    hide js_normal
-    show js_talk at left
-    js "\"That’s just my problem! She’s here in Byteborough with me! UGH!!!\""
+    js talk "\"That’s just my problem! She’s here in Byteborough with me! UGH!!!\""
     js "\"Anyway, I’m in computer science because it’s so popular right now!\""
     js "\"I’m totally excited to meet new people and make a lot of friends!\""
     js "\"What about you, Python?\""
-    
-    hide js_talk
-    show js_normal at left
+    show js
 
-    hide python_pocket
-    show python_pocket_happy at right
-
-    p "\"Well it’s nice that your mom loves you that much. But, I definitely get how that is.\""
-    p "\"I think computer science will be really important and I like learning new stuff.\""
-    p "\"I’m not super passionate about a career in it, but I might be interested in A.I..\""
-    hide python_pocket_happy
-    show python_pocket at right
+    p @ pocket happy "\"Well it’s nice that your mom loves you that much. But, I definitely get how that is.\""
+    p @ pocket happy "\"I think computer science will be really important and I like learning new stuff.\""
+    p @ pocket happy "\"I’m not super passionate about a career in it, but I might be interested in A.I..\""
 
     # Another short interaction not worth seperating files. Temporarily named everything "Respond to X" since I didnt know what to put - Lazzy
     menu w0_d2_BreakoutResponse1:
@@ -214,22 +172,16 @@ label w0_d2:
             mc "\"Yeah, it is pretty annoying that your mom won’t leave you alone.\""
             mc "\"Parents can be so annoying.\""
             mc "\"I wish my mom had cared enough to come with me to orientation though.\""
-            hide js_normal
-            show js_talk at left
-            js "\"Well actually-\""
-            hide js_talk
-            show js_normal at left
+
+            js @ talk "\"Well actually-\""
 
         "Respond to Python":
             $ p_rep = reputation(p_rep, 2)
             mc "\"Yeah I agree with Python, computer science definitely seems cool.\""
             mc "\"I’m just like you, I don’t have much experience, but I’m excited to learn.\""
             mc "\"And A.I. is a great field to make money in.\""
-            hide python_pocket
-            show python_pocket_happy at right
-            p "\"I don’t care too much about the money, but it definitely won’t hurt!\""
-            hide python_pocket_happy
-            show python_pocket at right
+
+            p @ pocket happy "\"I don’t care too much about the money, but it definitely won’t hurt!\""
 
         "Respond to C++":
             $ c_rep = reputation(c_rep, 3)
@@ -237,59 +189,53 @@ label w0_d2:
             mc "\"I’ve never heard of iClicker or Mentimeter.\""
             mc "\"I don’t know much when it comes to coding, but you sound really experienced.\""
             mc "\"Maybe you could show me the ropes sometime...?\""
-            hide cpp_normal
-            show cpp_talk
-            c "\"Sure, if you can keep up...\""
-            hide cpp_talk
-            show cpp_normal
+
+            c @ talk "\"Sure, if you can keep up...\""
     
-    show bsl_talk
-    bsl "\"Alright now, we’re gonna start our guided tour of campus!\""
+    hide js
+    hide python
+    hide cpp
+    show bsl
+    bsl talk "\"Alright now, we’re gonna start our guided tour of campus!\""
      
     #tour just started put scene change
     scene statue_garden with fade
-    show bsl_normal with dissolve
+    show bsl with dissolve
 
     "{i}The group tours campus as the breakout session leader talks about random trivia{/i}"
-    hide bsl_normal
-    show bsl_talk
-    bsl "\"And if you look to your left you will see Half-A-Century Tower...\""
-    hide bsl_talk
-    show cpp_talk with dissolve
-    c "\"Gosh, this is so boring.\""
+
+    bsl @ talk "\"And if you look to your left you will see Half-A-Century Tower...\""
+    hide bsl
+
+    show cpp with dissolve
+    c talk "\"Gosh, this is so boring.\""
     c "\"Who doesn’t know all of this stuff already?\""
     c "\"I mean did anybody really come to this school without already taking a tour?\""
-    hide cpp_talk
-    show cpp_normal
-    show python_pocket_happy at left with dissolve
-    p "\"I didn’t... so this is interesting! I’m really enjoying this tour.\""    
+    show cpp
+
+    show python pocket at left with dissolve
+    p pocket happy "\"I didn’t... so this is interesting! I’m really enjoying this tour.\""    
     p "\"Like look at that cool statue over there.\""
     p "\"Don’t you guys think he looks cool?\""
-    hide python_pocket_happy
-    show python_pocket at left
-    hide cpp_normal
-    show cpp_talk
-    c "\"Oh? You think that’s cool?\""
+    show python pocket
+
+    c talk "\"Oh? You think that’s cool?\""
     c "\"That statue is actually Thomas ‘Firewall’ Jackson.\""
     c "\"He was a general in a huge war a while ago and the armies he commanded were basically impenetrable.\""
     c "\"But, he killed a lot of people...\""
     c "\"You really think someone like that is cool??\""
-    hide cpp_talk
-    show cpp_normal
-    hide python_pocket
-    show python_pocket_happy at left
-    p "\"Oh, well I didn’t realize that...\""
-    hide cpp_normal
-    hide python_pocket_happy
-    show python_pocket at left
-    show cpp_talk
-    c "\"Yeah, I wouldn’t expect someone like you to know basic history...\""
-    hide cpp_talk
-    show cpp_normal
-    show js_talk at right with dissolve
-    js "\"Well I thought he was cool looking too, it was just an honest mistake.\""
+    show cpp
+    
+    p @ pocket happy "\"Oh, well I didn’t realize that...\""
+
+    c @ talk "\"Yeah, I wouldn’t expect someone like you to know basic history...\""
+    show cpp
+
+    show js at right with dissolve
+    js talk "\"Well I thought he was cool looking too, it was just an honest mistake.\""
     js "\"There’s no need to be so aggressive, C++...\""
 
+    # characters shown: python, cpp, js
     menu w0_d2_StatueChoice:
         js "\"Do you agree with what I’m saying, [mc], or are you on C++’s side?\""
 

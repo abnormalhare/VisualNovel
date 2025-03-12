@@ -17,18 +17,20 @@ transform not_speaking:
 
 # Characters
 define mc = Character("Developer")
-define r = Character("Rust", color="#B27300")
-define p = Character("???", color="#7DC23B")
-define c = Character("???", color="00599C")
-define j = Character("Java", color="#964000")
-define js = Character("???", color="#FFD700")
-define u = Character("???", color="#5c5f5d")
+define r = Character("Rust", color="#B27300", image="rust")
+define p = Character("???", color="#7DC23B", image="python")
+define c = Character("???", color="00599C", image="cpp")
+define j = Character("???", color="#964000", image="java")
+define js = Character("???", color="#FFD700", image="js")
+define u = Character("???", color="#080f0a", image="advisor")
 define a = Character("Advisor", color="#f4f880")
 define dc = Character("Director of Computing College", color="#10436b")
 
 #CHANGE PERL COLOR
-define pe = Character("Perl", color="5c5f5d")
-define bsl = Character("Breakout Session Leader", color="5c5f5d")
+define pe = Character("Perl", color="5c5f5d", image="perl")
+define bsl = Character("Breakout Session Leader", color="5c5f5d", image="bsl")
+
+## OLD CHARACTER IMAGE CODE ##
 
 #Rust
 image rust_normal = "Rust/Rust_Base_1.png"
@@ -102,6 +104,64 @@ default bsl_rep = 50
 #background characters with no impact
 #this needs to be changed to the final character image for the advisor
 image advisor = "SideCharacters/advisor_tempImage.png"
+
+## NEW CHARACTER IMAGE CODE ##
+
+#Rust
+image rust = "Rust/Rust_Base_1.png"
+image rust talk = "Rust/Rust_Base_2.png"
+image rust angry = "Rust/Rust_Angry.png"
+image rust confused = "Rust/Rust_ConfusedGlare.png"
+
+image rust wave = "Rust/Rust_Wave.png"
+image rust wave talk = "Rust/Rust_Wave_1.png"
+
+#Java
+image java = "Java/Java_Base_1.png"
+image java happy = "Java/Java_Base_2.png"
+image java uh = "Java/Java_MouthOpen.png"
+image java wink = "Java/Java_Wink.png"
+image java angry = "Java/Java_Angry.png"
+
+image java glasses = "Java/Java_Base_Glasses.png"
+image java glasses happy = "Java/Java_Base_Glasses_2.png"
+image java glasses angry = "Java/Java_Angry_Glasses.png"
+image java glasses uh = "Java/Java_Glasses_MouthOpen.png"
+
+#CPP
+image cpp = "C++/C++_Base_1.png"
+image cpp happy = "C++/C++_Base_2.png"
+image cpp talk = "C++/C++_Talking.png"
+
+image cpp angry = "C++/C++_Angry.png"
+image cpp angry talk = "C++/C++_AngryTalking.png"
+
+image cpp handhip = "C++/C++_Base_HandHip_1.png"
+image cpp handhip talk = "C++/C++_Base_HandHip.png"
+
+#Python
+image python = "Python/Python_Base_1.png"
+image python happy = "Python/Python_Base_2.png"
+
+image python pocket = "Python/Python_HandsPocket_1.png"
+image python pocket happy = "Python/Python_HandsPocket_2.png"
+
+image python nojacket = "Python/Python_Base_1.5.png"
+image python nojacket happy = "Python/Python_Base_2.5.png"
+
+image python angry = "Python/Python_HandsPocket_Angry2.png"
+image python angry talk = "Python/Python_HandsPocket_Angry.png"
+
+#Javascript
+image js = "JavaScript/JavaScript_Base_1.png"
+image js smirk = "JavaScript/JavaScript_Smirk.png"
+image js talk = "JavaScript/JavaScript_Talking.png"
+image js blush = "JavaScript/JavaScript_BlushSmile.png"
+image js angry = "JavaScript/JavaScript_Angry.png"
+
+#Breakout Leader
+image bsl = "SideCharacters/BreakoutLeader/BreakoutLeader_Normal.png"
+image bsl talk = "SideCharacters/BreakoutLeader/BreakoutLeader_Talking.png"
 
 
 # Backgrounds
